@@ -1,0 +1,19 @@
+name: dt-plus
+
+services:
+  android:
+    build:
+      context: ./Docker
+      dockerfile: ./android.Dockerfile
+    volumes:
+      - ./scripts:/scripts
+      - ./static/apks:/static/apks
+  proxy:
+    image: mitmproxy/mitmproxy:latest
+    command: mitmweb --web-host 0.0.0.0 -s /proxy/proxy.py
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ./static/proxy:/home/mitmproxy/.mitmproxy
+      - ./proxy:/proxy

@@ -1,0 +1,19 @@
+{
+  "name": "dt-plus",
+  "version": "1.0.0",
+  "scripts": {
+    "\n---------- ANDROID ----------": "",
+    "android:bash": "docker compose run --rm android bash",
+    "android:debug": "docker compose run --rm android bash /scripts/debugger.sh",
+    "android:pair": "./scripts/adb-remote.sh",
+    "\n---------- PROXY ----------": "",
+    "proxy:serve": "docker compose up proxy && docker compose down",
+    "\n---------- GAME ----------": "",
+    "game:script": "./scripts/dt-fetcher.sh",
+    "": ""
+  },
+  "devDependencies": {
+    "js-beautify": "^1.15.1",
+    "prettier": "^3.3.3"
+  }
+}
